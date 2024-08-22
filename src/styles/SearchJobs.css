@@ -1,0 +1,53 @@
+.search-jobs-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.search-results {
+    flex: 3;
+}
+
+.search-results h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.job-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.search-history {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin-left: 20px;
+    border-radius: 8px;
+}
+
+.search-history h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.search-history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.search-history ul li {
+    margin-bottom: 10px;
+}
+
+.search-history ul li a {
+    text-decoration: none;
+    color: #000;
+}
+
+.search-history ul li a:hover {
+    text-decoration: underline;
+}

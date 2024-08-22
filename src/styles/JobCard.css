@@ -1,0 +1,61 @@
+.job-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.job-card h3 {
+    font-size: 20px;
+    margin: 0 0 15px;
+}
+
+.skills {
+    margin-bottom: 15px;
+}
+
+.skills .skill-link {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #2196f3;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.skills .skill-link:hover {
+    background-color: #1976d2;
+}
+
+.job-card a {
+    color: #2196f3;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.job-card a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .job-card {
+        margin: 10px;
+    }
+
+    .job-card h3 {
+        font-size: 18px;
+    }
+
+    .skills .skill-link {
+        font-size: 12px;
+    }
+}
