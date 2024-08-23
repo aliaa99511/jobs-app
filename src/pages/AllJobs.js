@@ -1,23 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchJobs } from '../slices/jobsSlice';
 import JobCard from '../components/JobCard';
 import InfiniteScroll from '../components/InfiniteScroll';
 import '../styles/JobsList.css';
 
 function AllJobs() {
-    const [jobs, setJobs] = useState([]);
-    const [cursor, setCursor] = useState(0);
-    const [totalJobs, setTotalJobs] = useState(0);
+    const dispatch = useDispatch();
+    const { jobs, cursor, totalJobs } = useSelector((state) => state.jobs);
 
     useEffect(() => {
-        loadJobs();
-    }, []);
+        dispatch(fetchJobs(cursor));
+    }, [dispatch, cursor]);
 
-    const loadJobs = async () => {
-        const response = await axios.get(`https://skills-api-zeta.vercel.app/jobs?cursor=${cursor}&limit=12`);
-        setJobs([...jobs, ...response.data.data.jobs]);
-        setCursor(cursor + 12);
-        setTotalJobs(response.data.data.meta.count);
+    const loadJobs = () => {
+        dispatch(fetchJobs(cursor));
     };
 
     return (
